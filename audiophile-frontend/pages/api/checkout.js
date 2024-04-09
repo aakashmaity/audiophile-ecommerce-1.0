@@ -60,7 +60,7 @@ export default async function handler(req, res) {
     name: "Audiophile",
     description: "All type of audio system at one place",
     order_id: order?.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    callback_url: `https://main--chic-douhua-bf6b83.netlify.app/api/paymentverification?id=${orderDoc?._id}`,
+    callback_url: `http://localhost:3001/api/paymentverification?id=${orderDoc?._id}`,
     prefill: {
       name: "Akash Maity",
       email: "akashmaity57@gmail.com",
