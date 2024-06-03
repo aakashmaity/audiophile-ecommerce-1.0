@@ -125,7 +125,7 @@ export default function ProductForm({
           setCategory(e.target.value);
         }}
       >
-        <option value="">Uncategorized</option>
+        <option value="" key="uncategorized">Uncategorized</option>
         {categories.length > 0 &&
           categories.map(c => (
             <option key={c._id} value={c._id}>{c.name}</option>
@@ -141,7 +141,7 @@ export default function ProductForm({
                 onChange={(e) => changeProductProps(p.name, e.target.value)}
               >
                 {p.values.map((v) => (
-                  <option value={v}>{v}</option>
+                  <option value={v} key={v._id}>{v}</option>
                 ))}
               </select>
             </div>

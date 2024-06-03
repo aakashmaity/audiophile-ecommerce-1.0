@@ -6,7 +6,7 @@ import clientPromise from "../../../lib/mongodb";
 
 const adminEmails = [
   "akash.maity.csbs25@heritageit.edu.in",
-  "aakashmaity52@gmail.com",
+  "aakashmaity57@gmail.com",
 ];
 
 export const authOptions = {
