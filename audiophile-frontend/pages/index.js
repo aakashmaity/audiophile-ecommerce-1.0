@@ -17,7 +17,7 @@ export default function Home({featuredProduct,newProducts}) {
 }
 
 export async function getServerSideProps(){
-  const featuredProductId = '65f6bfc1d5336980e246b27a';
+  const featuredProductId = '660070af9edaaa5f20a81413';
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);
   const newProducts = await Product.find({},null,{sort:{'_id':-1},limit:10});    //{} to det all products(no filtering), "null" get all data/attributes
