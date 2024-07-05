@@ -3,29 +3,33 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Logo from "./Logo";
 
-const Navbar = ({show}) => {
+const Navbar = ({ showNav }) => {
   const inactiveLink = "flex gap-1 p-1 items-center";
   const activeLink = inactiveLink + " bg-highlight text-black rounded-md";
-  const inactiveIcon = ' w-5 h-5';
-  const activeIcon = inactiveIcon + ' fill-primary'
-
+  const inactiveIcon = " w-5 h-5";
+  const activeIcon = inactiveIcon + " fill-primary";
 
   const router = useRouter();
 
   // console.log({ router });
   const { pathname } = router;
 
-  async function LogOut(){
-    await router.push('/');
+  async function LogOut() {
+    await router.push("/");
     await signOut();
   }
 
-
   return (
-    <aside className={(show ? 'left-0':'-left-full ') + " top-0 text-gray-600 p-4 fixed w-full bg-bgGray h-full transition-all md:static md:w-auto"}>
-      <div className="mb-4 mr-4">
-        <Logo/>
+    <aside
+      className={
+        (showNav ? "left-0" : "-left-full ") +
+        "top-0 text-gray-600 p-4 fixed w-[40%] bg-bgBlue h-[100vh] transition-all md:static md:w-[25%]"
+      }
+    >
+      <div className="flex justify-between">
+        
       </div>
+      
       <nav className="flex flex-col gap-2">
         <Link
           href={"/"}
@@ -65,7 +69,7 @@ const Navbar = ({show}) => {
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"
             />
           </svg>
@@ -98,20 +102,18 @@ const Navbar = ({show}) => {
           </svg>
           <span>Settings</span>
         </Link>
-        <button 
-          onClick={LogOut}
-          className={inactiveLink}>
+        <button onClick={LogOut} className={inactiveLink}>
           <svg
             className={pathname === "/logout" ? activeIcon : inactiveIcon}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"
             />
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
             />
           </svg>

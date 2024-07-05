@@ -4,7 +4,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    
   ],
   theme: {
     extend: {
@@ -13,12 +12,15 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      colors:{
-        primary: '#5542F6',
-        highlight: '#eae8fb',
-        bgGray: '#fbfafd'
-      }
+      colors: {
+        primary: "#5A72A0",
+        highlight: "#eae8fb",
+        bgYellow: "#FDFFE2",
+        bgGreen: "#B6C7AA",
+        bgBlue: "#BBE9FF",
+        bgOrange : "#FF8237",
+      },
     },
   },
-  plugins: [],
+  // plugins: [require("daisyui")],
 };

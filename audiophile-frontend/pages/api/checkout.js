@@ -59,8 +59,8 @@ export default async function handler(req, res) {
     currency: "INR",
     name: "Audiophile",
     description: "All type of audio system at one place",
-    order_id: order?.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    callback_url: `https://audiophile-ecommerce-client-frontend-1-0-bf7r.vercel.app/api/paymentverification?id=${orderDoc?._id}`,
+    order_id: order?.id, //This is a Order ID. Pass the `id` obtained in the response of Step 1
+    callback_url: `/api/paymentverification?id=${orderDoc?._id}`,
     prefill: {
       name: "Akash Maity",
       email: "akashmaity57@gmail.com",

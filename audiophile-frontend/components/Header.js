@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   padding: 20px 0;
 `;
 const StyledNav = styled.nav`
-  ${props => props.mobileNavActive ? `display: block;` : `display: none;`}
+  ${props => (props.mobilenavactive && 'true') ? `display: block;` : `display: none;`}
   gap: 15px;
   position: fixed;
   top: 0;
@@ -60,20 +60,25 @@ const NavButton = styled.button`
 
 export default function Header() {
   const { cartProducts } = useContext(CartContext);
-  const [mobileNavActive, setMobileNavActive] = useState(false);
+  const [mobilenavactive, setMobilenavactive] = useState(false);
+
+  function toggleMobileNav() {
+    setMobilenavactive(!mobilenavactive);
+  };
+
   return (
     <StyledHeader>
       <Center>
         <Wrapper>
-          <Logo href={"/"}> Ecommerce</Logo>
-          <StyledNav mobileNavActive={mobileNavActive}>
+          <Logo href={"/"}> Audiophile</Logo>
+          <StyledNav mobilenavactive={mobilenavactive ? 'true' : undefined }>
             <NavLink href={"/"}>Home</NavLink>
             <NavLink href={"/products"}>Products</NavLink>
             <NavLink href={"/categories"}>Categories</NavLink>
             <NavLink href={"/account"}>Account</NavLink>
             <NavLink href={"/cart"}>Cart({cartProducts?.length})</NavLink>
           </StyledNav>
-          <NavButton onClick={() => setMobileNavActive((prev) => !prev)}>
+          <NavButton onClick={toggleMobileNav}>
             <NavIcon />
           </NavButton>
         </Wrapper>

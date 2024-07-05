@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body{
+  @apply bg-bgYellow
+}
 
 input,textarea,select{
   @apply border border-gray-300 rounded-sm py-1 px-3 w-full mb-2;
