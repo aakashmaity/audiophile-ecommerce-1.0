@@ -21,13 +21,31 @@ const CalWrapper = styled.div`
   margin: 40px 0;
 `;
 const PriceRow = styled.div`
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+`;
+const Desc = styled.p`
+  font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 20px;
 `
+const DescList = styled.ul`
+  list-style: disc;
+  font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
+  li {
+    margin-bottom: 10px;
+    font-weight: 350;
+    line-height: 20px;
+  }
+`;
 
 export default function ProductPage({ product }) {
-    const {addProduct} = useContext(CartContext)
+  const { addProduct } = useContext(CartContext);
+
+  const description = product.description.split("*");
+  console.log(description);
+
   return (
     <>
       <Header />
@@ -38,16 +56,19 @@ export default function ProductPage({ product }) {
           </Box>
           <div>
             <h1>{product.title}</h1>
-            <p>{product.description}</p>
+            <Desc>{description[0]}</Desc>
+            <DescList>
+              {description.map((desc, idx) =>
+                idx !== 0 ? <li key={desc}>{desc}</li> : null
+              )}
+            </DescList>
             <PriceRow>
               <div>
                 <Price>₹{product.price}</Price>
               </div>
               <div>
-                <Button 
-                    primary={1}
-                    onClick={()=> addProduct(product._id)}>
-                 Add to cart
+                <Button primary={1} onClick={() => addProduct(product._id)}>
+                  Add to cart
                 </Button>
               </div>
             </PriceRow>

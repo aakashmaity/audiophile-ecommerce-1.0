@@ -9,7 +9,7 @@ const ProductWrapper = styled.div``;
 
 const WhiteBox = styled(Link)`
   background-color: #fff;
-  padding: 20px;
+  padding: 0px;
   height: 120px;
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@ const WhiteBox = styled(Link)`
   border-radius: 10px;
   img {
     max-width: 100%;
-    max-height: 80px;
+    max-height: 100px;
   }
 `;
 const Title = styled(Link)`
@@ -65,9 +65,7 @@ export default function ProductBox({
   return (
     <ProductWrapper>
       <WhiteBox href={url}>
-        <div>
           <img src={images[0]} alt="images" />
-        </div>
       </WhiteBox>
       <ProductInfoBox>
         <Title href={url}>{title}</Title>

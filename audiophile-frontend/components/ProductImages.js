@@ -37,7 +37,7 @@ export default function ProductImages({ images }) {
         {images.map((image) => (
           <ImageButton
             key={image}
-            active={image === activeImage}
+            active={image === activeImage ? 'true' : 'false'}
             onClick={() => setActiveImage(image)}
           >
             <Image src={image} alt="" />

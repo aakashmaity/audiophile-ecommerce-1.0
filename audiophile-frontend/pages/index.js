@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import NewProducts from "@/components/NewProducts";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
-import { useState } from "react";
+
 
 export default function Home({ featuredProduct, newProducts }) {
   // console.log(featuredProduct,newProducts)

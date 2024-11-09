@@ -1,5 +1,5 @@
 
-export default function Loginpage() {
+export default function SignIn() {
   return (
     <>
       <div className="bg-black text-white flex min-h-screen flex-col items-center pt-16 sm:justify-center sm:pt-0">
@@ -100,7 +100,7 @@ export default function Loginpage() {
                 <div className="mt-4 flex items-center justify-between gap-x-2">
                   <a
                     className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:ring hover:ring-white h-10 px-4 py-2 duration-200"
-                    href="/register"
+                    href="/signup"
                   >
                     Register
                   </a>

@@ -22,6 +22,7 @@ const Title = styled.h1`
 const Desc = styled.p`
   color: #aaa;
   font-size: 0.8rem;
+  font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
 `;
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -64,6 +65,8 @@ export default function Featured({ product }) {
     addProduct(product._id);
   }
 
+  const desc = product.description.split("*")[0];
+
   return (
     <Bg>
       <Center>
@@ -71,7 +74,7 @@ export default function Featured({ product }) {
           <Column>
             <div>
               <Title>{product?.title}</Title>
-              <Desc>{product?.description}</Desc>
+              <Desc>{desc}</Desc>
               <ButtonWrapper>
                 <ButtonLink
                   href={"/products/" + product?._id}

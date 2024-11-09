@@ -74,8 +74,8 @@ export default function Header() {
           <StyledNav mobilenavactive={mobilenavactive ? 'true' : undefined }>
             <NavLink href={"/"}>Home</NavLink>
             <NavLink href={"/products"}>Products</NavLink>
-            <NavLink href={"/categories"}>Categories</NavLink>
-            <NavLink href={"/account"}>Account</NavLink>
+            <NavLink href={"/"} onClick={() => alert("Not implemented yet, Coming soon..")}>Categories</NavLink>
+            <NavLink href={"/"} onClick={() =>  alert("Not implemented yet, Coming soon..")}>Account</NavLink>
             <NavLink href={"/cart"}>Cart({cartProducts?.length})</NavLink>
           </StyledNav>
           <NavButton onClick={toggleMobileNav}>
